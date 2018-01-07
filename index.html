@@ -9,7 +9,7 @@
     </head>
     <body ng-controller="con">     
      <center>
-         Search : <input ng-model="inps"></input>
+         Search : <input ng-model="inps" />
          <ul ng-repeat="name in names| filter: inps track by $index">
              <li n-id="name" ng-bind="name"></li> 
              <button class="eB" ng-click="edit(name)" >
