@@ -1,5 +1,6 @@
+
 body {
-    margin:10px;
+    margin:0px;
 }
 .eB{
     display:inline-block;
@@ -29,4 +30,15 @@ ul{
     margin-top:7px;
     width:90px;
     height:40px;
+}
+/* loading */ 
+#loadDiv{
+    width:100%;
+    height:65%;
+    background-color:#DD0031;
+    font-size:35px;
+    color:white;
+    position:absolute;
+    padding-top:50%;
+    text-shadow:black 1px 1px 1px;
 }

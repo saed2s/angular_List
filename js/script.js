@@ -20,8 +20,11 @@ window.onload=function(){
 	     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
         headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
         document.getElementsByTagName('head')[0].innerHTML = headHTML;
-         
-        var namesJs = ['Basel','Ahmad','Khaled','Belal'],
+         /// hide loading img 
+         setTimeout(function(){
+             document.getElementById("img").style.display="none"; 
+	      },500);
+              var namesJs = ['Basel','Ahmad','Khaled','Belal'],
         namesJs = toUppSort(namesJs);
 
     function toUppSort(array){
@@ -55,6 +58,10 @@ window.onload=function(){
            obj.style.backgroundColor="white";
        },1100);
     }
+    var loadDiv = document.getElementById("loadDiv");
+    setTimeout(function(){
+	     loadDiv.style.display="none";
+    },400);
     var myApp = angular.module("app",[]);
     myApp.controller("con",function($scope){
         "use strict";

@@ -18,9 +18,11 @@
             <meta name="apple-mobile-web-app-status-bar-style" content="#DD0031" />
 
     </head>
-    <body ng-controller="con">     
+    <body ng-controller="con">          
+    
      <center>
-         Search : <input ng-model="inps" />
+       <div id="loadDiv">Loading ...</div>   
+        Search : <input ng-model="inps" />
          <ul ng-repeat="name in names| filter: inps track by $index">
              <li n-id="name" ng-bind="name"></li> 
              <button class="eB" ng-click="edit(name)" >
@@ -37,6 +39,5 @@
       </center>
 
       <script src="js/script.js"></script>
-     
-    </body>
+      </body>
 </html>
