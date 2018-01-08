@@ -20,11 +20,8 @@ window.onload=function(){
 	     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
         headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
         document.getElementsByTagName('head')[0].innerHTML = headHTML;
-         /// hide loading img 
-         setTimeout(function(){
-             document.getElementById("img").style.display="none"; 
-	      },500);
-              var namesJs = ['Basel','Ahmad','Khaled','Belal'],
+        
+        var namesJs = ['Basel','Ahmad','Khaled','Belal'],
         namesJs = toUppSort(namesJs);
 
     function toUppSort(array){
