@@ -55,6 +55,7 @@ window.onload=function(){
            obj.style.backgroundColor="white";
        },1100);
     }
+    /* hide loading */
     var loadDiv = document.getElementById("loadDiv");
     setTimeout(function(){
 	     loadDiv.style.display="none";
