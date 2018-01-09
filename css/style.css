@@ -2,6 +2,13 @@
 body {
     margin:0px;
 }
+#searchInp{
+    margin-top:30px;
+    border : 1px solid black ;
+    height:20px;
+    width:170px;
+    border-radius:3px;
+}
 .eB{
     display:inline-block;
     background-color:white;
