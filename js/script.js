@@ -43,7 +43,6 @@ window.onload=function(){
             if (ma != null){
                 if(ma == obj[i].innerText.trim()){
                     return obj[i];
-                    
                 }
             }
         }
@@ -58,7 +57,7 @@ window.onload=function(){
     /* hide loading */
     var loadDiv = document.getElementById("loadDiv");
     setTimeout(function(){
-	     loadDiv.style.display="none";
+	     $("#loadDiv").fadeOut(200);
     },400);
     var myApp = angular.module("app",[]);
     myApp.controller("con",function($scope){
