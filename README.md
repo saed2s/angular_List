@@ -4,6 +4,7 @@ Single page web application example
 <br /> 
 <br /> 
 <br />
+⬇⬇⬇
 ###  frameworks and Libraries used: 
 * AngularJs
 * Jquery **(To fade out loading page only)** 
