@@ -13,17 +13,6 @@
         }
         return finalArray ;
     }
-
-window.onload=function(){
-	    "use strict"; 
-	     /// load Font awesome 
-	     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-        headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
-        document.getElementsByTagName('head')[0].innerHTML = headHTML;
-        
-        var namesJs = ['Basel','Ahmad','Khaled','Belal'],
-        namesJs = toUppSort(namesJs);
-
     function toUppSort(array){
         "use strict";
          var finalArray= upperArray(array);
@@ -34,6 +23,17 @@ window.onload=function(){
         namesJs=toUppSort(namesJs);
         es.names=namesJs;
     }
+window.onload=function(){
+	    "use strict"; 
+	     /// load Font awesome 
+	     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
+        headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
+        document.getElementsByTagName('head')[0].innerHTML = headHTML;
+        
+        var namesJs = ['Basel','Ahmad','Khaled','Belal'],
+        namesJs = toUppSort(namesJs);
+
+    
     function searchInLi(txt){
         "use strict";
         var obj = document.getElementsByTagName("li"),
