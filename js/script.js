@@ -37,10 +37,7 @@ window.onload=function(){
 	   else{
 	       alert("Proplem when load store.js library please try reload the page or another browser ");
   	   }
-	   $("#itemsDiv").niceScroll({
-	       cursorcolor:"#DD0031",
-          cursorwidth:"5px"
-      });
+	 
      
     function searchInLi(txt){
         "use strict";
@@ -77,6 +74,10 @@ window.onload=function(){
     setTimeout(function(){
 	     $("#loadDiv").fadeOut(200);
     },500);
+    $("#itemsDiv").niceScroll({
+	       cursorcolor:"#DD0031",
+          cursorwidth:"5px"
+    });
     var myApp = angular.module("app",[]);
     myApp.controller("con",function($scope){
         "use strict";
