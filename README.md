@@ -7,6 +7,7 @@ Single page web application example
 * Jquery **(To fade out loading page only)** 
 * Font Awesome 
 * [store.js](https://github.com/marcuswestin/store.js) **(LocalStorge library)**
+* NiceScroll 
 ### Some useful services we used : 
 * [Faviconit](http://faviconit.com) **(To generate favi icon of the best practices size)**
 
