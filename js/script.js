@@ -37,14 +37,11 @@ window.onload=function(){
 	   else{
 	       alert("Proplem when load store.js library please try reload the page or another browser ");
   	   }
-     function arrayUpt(es){
-        "use strict";
-        namesJs=toUppSort(namesJs);
-        es.names=namesJs;
-        if(store){
-            store.set("data",namesJs);
-        }
-    }
+	   $("#itemsDiv").niceScroll({
+	       cursorcolor:"#DD0031",
+          cursorwidth:"5px"
+      });
+     
     function searchInLi(txt){
         "use strict";
         var obj = document.getElementsByTagName("li"),
@@ -60,10 +57,20 @@ window.onload=function(){
     }
     function light(obj){
        "use strict";
+       $("itemsDiv").scrollTo(obj);
        obj.style.backgroundColor ="#97ff80";
        setTimeout(function(){
            obj.style.backgroundColor="white";
        },1100);
+    }
+	 function arrayUpt(es){
+        "use strict";
+        namesJs=toUppSort(namesJs);
+        es.names=namesJs;
+        if(store){
+            store.set("data",namesJs);
+        }
+       
     }
     /* hide loading */
     var loadDiv = document.getElementById("loadDiv");
@@ -81,7 +88,7 @@ window.onload=function(){
             if(userEnter == "" || userEnter== null){}
             else{
                 namesJs[arrayInd] = userEnter;  
-                arrayUpt($scope);
+                arrayUpt($scope,userEnter);
                 setTimeout(function(){
                      var newObj = searchInLi(userEnter);
                     light(newObj);
@@ -102,10 +109,10 @@ window.onload=function(){
           var userAdd = prompt("Enter value :");
           if(userAdd=="" || userAdd == null){}
           else{
-              namesJs.push(userAdd);
+              namesJs.push(userAdd);             
               arrayUpt($scope);
               setTimeout(function(){
-                  var newObj = searchInLi(userAdd);
+	               var newObj = searchInLi(userAdd);
                   light(newObj);
               },100);
               
