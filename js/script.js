@@ -39,9 +39,9 @@ window.onload=function(){
   	   }
 	 
      
-    function searchInLi(txt){
+    function searchInItems(txt){
         "use strict";
-        var obj = document.getElementsByTagName("li"),
+        var obj = document.getElementsByClassName("itemsP"),
             value = new RegExp(txt.trim(),"i");
         for (var i = 0; i<obj.length; i++){
             var ma =obj[i].innerText.trim().match(value);
@@ -54,7 +54,7 @@ window.onload=function(){
     }
     function light(obj){
        "use strict";
-       $("itemsDiv").scrollTo(obj);
+       $("itemsDiv").scrollTo($(obj));
        obj.style.backgroundColor ="#97ff80";
        setTimeout(function(){
            obj.style.backgroundColor="white";
@@ -74,7 +74,7 @@ window.onload=function(){
     setTimeout(function(){
 	     $("#loadDiv").fadeOut(200);
     },500);
-    $("#itemsDiv").niceScroll({
+    $("#mainDiv").niceScroll({
 	       cursorcolor:"#DD0031",
           cursorwidth:"5px"
     });
@@ -83,15 +83,15 @@ window.onload=function(){
         "use strict";
         $scope.names = toUppSort(namesJs);
         $scope.edit = function(id){
-            var obj = searchInLi(id),
+            var obj = searchInItems(id),
                 arrayInd= namesJs.indexOf(id),
                 userEnter = prompt("Edit Value",id);
             if(userEnter == "" || userEnter== null){}
             else{
                 namesJs[arrayInd] = userEnter;  
-                arrayUpt($scope,userEnter);
+                arrayUpt($scope);
                 setTimeout(function(){
-                     var newObj = searchInLi(userEnter);
+                     var newObj = searchInItems(userEnter);
                     light(newObj);
                 },100);
             }
@@ -113,7 +113,7 @@ window.onload=function(){
               namesJs.push(userAdd);             
               arrayUpt($scope);
               setTimeout(function(){
-	               var newObj = searchInLi(userAdd);
+	               var newObj = searchInItems(userAdd);
                   light(newObj);
               },100);
               

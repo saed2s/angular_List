@@ -47,16 +47,16 @@
          <div id="loadDiv">Loading ...</div>   
      		<label for="searchInp" >Search :</label>
          <input id="searchInp" ng-model="inps" />
-         <div id="itemsDiv">
-             <ul  ng-repeat="name in names| filter: inps track by $index">
-                 <li n-id="name" ng-bind="name"></li> 
-                     <button class="eB" ng-click="edit(name)" >
-                         <i style="color: #979800;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                     </button>
-                     <button class="dB" ng-click="del(name)">
-                         <i style="color : #ff6161;" class="fa fa-minus-square-o" aria-hidden="true"></i>
-                     </button>
-              </ul>
+         <div id="mainDiv">
+             <div  id="itemsDiv" ng-repeat="name in names| filter: inps track by $index">
+                 <p class="itemsP" n-id="name" ng-bind="name"></p> 
+                 <button class="eB" ng-click="edit(name)" >
+                     <i style="color: #979800;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                 </button>
+                 <button class="dB" ng-click="del(name)">
+                     <i style="color : #ff6161;" class="fa fa-minus-square-o" aria-hidden="true"></i>
+                 </button>
+              </div>
           </div>
           <br />
           <button id="addItem" ng-click="add()">

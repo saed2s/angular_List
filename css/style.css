@@ -9,7 +9,7 @@ body {
     width:170px;
     border-radius:3px;
 }
-#itemsDiv{
+#mainDiv{
     overflow-y: auto;
     width:250px;
     height:300px;
@@ -25,14 +25,14 @@ body {
     border:none;
     display:inline-block ;
 }
-li{
+.itemsP{
     display:inline-block;
     font-size:15px;
     margin-top:10px;
     border-radius:4px;
     padding:10px;
 }
-ul{
+#itemsDiv{
     border-bottom:1px solid ;
     width:200px;
 }
