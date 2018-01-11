@@ -54,7 +54,7 @@ window.onload=function(){
     }
     function light(obj){
        "use strict";
-       $("itemsDiv").scrollTo($(obj));
+       obj.scrollIntoView();
        obj.style.backgroundColor ="#97ff80";
        setTimeout(function(){
            obj.style.backgroundColor="white";
