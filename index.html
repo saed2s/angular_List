@@ -41,10 +41,14 @@
             <meta name="apple-mobile-web-app-status-bar-style" content="#DD0031" />
 
     </head>
-    <body ng-controller="con">          
-    
-     <center>
-         <div id="loadDiv">Loading ...</div>   
+    <body ng-controller="con">       
+     <div id="loadDiv" align="center">Loading ...</div>     
+     <div id="expDiv" ng-click="export()" align="center">
+         <label for="exS" id="expL"> <img id="expImg" src="img/export.svg" alt="export"  /></label>
+         <span id="exS">Export List</span>
+     </div>      
+     <hr color="#ff6161"/>      
+     <center>  
      		<label for="searchInp" >Search :</label>
          <input id="searchInp" ng-model="inps" />
          <div id="mainDiv">
@@ -62,6 +66,7 @@
           <button id="addItem" ng-click="add()">
             Add   <i class="fa fa-plus-square-o" aria-hidden="true"></i>
           </button>
+           
       </center>
 
       <script src="js/script.js"></script>

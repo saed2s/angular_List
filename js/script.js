@@ -1,42 +1,55 @@
+function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
 
-   function  upperStr(obj){
-       "use strict";
-        var firstLatter = obj[0].toUpperCase();
-        return firstLatter + obj.slice(1);
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
     }
-    function upperArray(array){
-       "use strict";
-        var finalArray = [];
-        for(var i in array){
-           var firstLatter = array[i][0].toUpperCase();
-           finalArray.push(firstLatter + array[i].slice(1));
-        }
-        return finalArray ;
+    else {
+        pom.click();
     }
-    function toUppSort(array){
-        "use strict";
-         var finalArray= upperArray(array);
-         return finalArray.sort() ;
-    }
+}
+function  upperStr(obj){
+    "use strict";
+     var firstLatter = obj[0].toUpperCase();
+     return firstLatter + obj.slice(1);
+}
+function upperArray(array){
+    "use strict";
+     var finalArray = [];
+     for(var i in array){
+         var firstLatter = array[i][0].toUpperCase();
+         finalArray.push(firstLatter + array[i].slice(1));
+     }
+     return finalArray ;
+}
+function toUppSort(array){
+    "use strict";
+     var finalArray= upperArray(array);
+     return finalArray.sort() ;
+}
     
 window.onload=function(){
-	    "use strict"; 
-	     /// load Font awesome 
-	     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-        headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
-        document.getElementsByTagName('head')[0].innerHTML = headHTML;
-        
-        var  namesJs =  ["test 1","Test 2","Test 3"];
-        namesJs = toUppSort(namesJs);         
-     	 if(store){
-	        var array =store.get("data");
-	        if(array){
-		         namesJs = array;
-		     }
-	   }
-	   else{
-	       alert("Proplem when load store.js library please try reload the page or another browser ");
-  	   }
+    "use strict"; 
+	  /// load Font awesome 
+	  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
+     headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
+     document.getElementsByTagName('head')[0].innerHTML = headHTML;
+       
+     var  namesJs =  ["test 1","Test 2","Test 3"];
+     namesJs = toUppSort(namesJs);         
+  	  if(store){
+         var array =store.get("data");
+	      if(array){
+	          namesJs = array;
+		   }
+	  }
+	  else{
+         alert("Proplem when load store.js library please try reload the page or another browser ");
+  	  }
 	 
      
     function searchInItems(txt){
@@ -119,7 +132,13 @@ window.onload=function(){
               
           }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         };
-        
+        $scope.export = function(){
+            var txt = "";
+            for(var i= 0;i<namesJs.length;i++){
+                txt +=namesJs[i] + "\n";
+    	      }
+	        download("list.txt",txt);
+	     };
     });
     
         
