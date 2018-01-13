@@ -4,7 +4,7 @@ Single page web application example
 <br />
 ###  frameworks and Libraries used: 
 * AngularJs
-* Jquery **(To fade out loading page only)** 
+* Jquery
 * Font Awesome 
 * [store.js](https://github.com/marcuswestin/store.js) **(LocalStorge library)**
 * NiceScroll 
