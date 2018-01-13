@@ -1,3 +1,4 @@
+
 function download(filename, text) {
     var pom = document.createElement('a');
     pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -33,11 +34,7 @@ function toUppSort(array){
     
 window.onload=function(){
     "use strict"; 
-	  /// load Font awesome 
-	  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-     headHTML    += '<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">';
-     document.getElementsByTagName('head')[0].innerHTML = headHTML;
-       
+    
      var  namesJs =  ["test 1","Test 2","Test 3"];
      namesJs = toUppSort(namesJs);         
   	  if(store){
@@ -50,7 +47,6 @@ window.onload=function(){
          alert("Proplem when load store.js library please try reload the page or another browser ");
   	  }
 	 
-     
     function searchInItems(txt){
         "use strict";
         var obj = document.getElementsByClassName("itemsP"),

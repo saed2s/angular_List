@@ -3,12 +3,22 @@
     <head>
         <title>Page Title</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-          <script src="https://code.jquery.com/jquery-3.1.1.js"></script>  
-          <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js'></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" ></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script> 
-         
-			 <!-- ****** faviconit.com favicons ****** -->
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>     
+          <script> window.jQuery ||  document.write(unescape("%3Cscript src='librarys/jquery-3.1.1.min.js' %3E%3C/script%3E"));</script>
+     
+          <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js'></script> 
+          <script>window.angular || document.write(unescape("%3Cscript src='librarys/angular.min.js' %3E%3C/script%3E")); </script>
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" ></script> 
+          <script>window.store ||  document.write(unescape("%3Cscript src='librarys/store.min.js' %3E%3C/script%3E"));</script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+          <script>window.jQuery.nicescroll ||document.write(unescape("%3Cscript src='librarys/jquery.nicescroll.min.js' %3E%3C/script%3E")); </script>
+      
+          <script defer src="librarys/fontawesome-all.min.js"></script>
+          
+	    	 <!-- ****** faviconit.com favicons ****** -->
 			 <link rel="shortcut icon" href="img/favicon.ico">
 		 	 <link rel="icon" sizes="16x16 32x32 64x64" href="img/favicon.ico">
 			 <link rel="icon" type="image/png" sizes="196x196" href="img/favicon-192.png">
@@ -33,12 +43,12 @@
 			
           <link rel="stylesheet" href="css/style.css" /> 
           <!-- Address bar color -->
-            <!-- Chrome, Firefox OS and Opera -->
-            <meta name="theme-color" content="#DD0031" />
-            <!-- Windows Phone -->
-            <meta name="msapplication-navbutton-color" content="#DD0031" />
-            <!-- iOS Safari -->
-            <meta name="apple-mobile-web-app-status-bar-style" content="#DD0031" />
+          <!-- Chrome, Firefox OS and Opera -->
+          <meta name="theme-color" content="#DD0031" />
+          <!-- Windows Phone -->
+          <meta name="msapplication-navbutton-color" content="#DD0031" />
+          <!-- iOS Safari -->
+          <meta name="apple-mobile-web-app-status-bar-style" content="#DD0031" />
 
     </head>
     <body ng-controller="con">       
@@ -55,16 +65,16 @@
              <div  id="itemsDiv" ng-repeat="name in names| filter: inps track by $index">
                  <p class="itemsP" n-id="name" ng-bind="name"></p> 
                  <button class="eB" ng-click="edit(name)" >
-                     <i style="color: #979800;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                     <i style="color: #979800;" class="far fa-edit" aria-hidden="true"></i>
                  </button>
                  <button class="dB" ng-click="del(name)">
-                     <i style="color : #ff6161;" class="fa fa-minus-square-o" aria-hidden="true"></i>
+                     <i style="color : #ff6161;" class="far fa-minus-square" aria-hidden="true"></i>
                  </button>
               </div>
           </div>
           <br />
           <button id="addItem" ng-click="add()">
-            Add   <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            Add   <i class="far fa-plus-square" aria-hidden="true"></i>
           </button>
            
       </center>
