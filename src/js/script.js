@@ -1,5 +1,7 @@
 
 function download(filename, text) {
+	
+	 "use strict";
     var pom = document.createElement('a');
     pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     pom.setAttribute('download', filename);
@@ -12,12 +14,15 @@ function download(filename, text) {
         pom.click();
     }
 }
-function  upperStr(obj){
+
+function  upperStr(obj){  
+    /// Make the first letter of the text capital letter
     "use strict";
      var firstLatter = obj[0].toUpperCase();
      return firstLatter + obj.slice(1);
 }
 function upperArray(array){
+     /// Make the first character of each element in the array capital
     "use strict";
      var finalArray = [];
      for(var i in array){
@@ -26,7 +31,9 @@ function upperArray(array){
      }
      return finalArray ;
 }
-function toUppSort(array){
+function toUppSort(array){ 
+    /* Make the first character of each element in the array capital
+     and sort array */
     "use strict";
      var finalArray= upperArray(array);
      return finalArray.sort() ;
@@ -34,20 +41,19 @@ function toUppSort(array){
     
 window.onload=function(){
     "use strict"; 
-    
-     var  namesJs =  ["test 1","Test 2","Test 3"];
-     namesJs = toUppSort(namesJs);         
-  	  if(store){
-         var array =store.get("data");
-	      if(array){
-	          namesJs = array;
+     var  itemsJs =  ["test 1","Test 2","Test 3"]; /// default items 
+     itemsJs = toUppSort(itemsJs);  /// sort and make each element of array capital    
+  	  if(store){ ///  if storeJs loaded
+         var array =store.get("data");  /// get stored data
+	      if(array){ /// if stored data is not empty
+	          itemsJs = array;
 		   }
 	  }
 	  else{
          alert("Proplem when load store.js library please try reload the page or another browser ");
   	  }
 	 
-    function searchInItems(txt){
+    function searchInItems(txt){  /// search in objects has class (temsP)
         "use strict";
         var obj = document.getElementsByClassName("itemsP"),
             value = new RegExp(txt.trim(),"i");
@@ -60,55 +66,61 @@ window.onload=function(){
             }
         }
     }
-    function light(obj){
+    function light(obj){  
+	    /// scroll to the element and make background green for 1.1 sec
        "use strict";
-       obj.scrollIntoView();
+       obj.scrollIntoView(); 
        obj.style.backgroundColor ="#97ff80";
        setTimeout(function(){
+	        /// return background to white
            obj.style.backgroundColor="white";
        },1100);
     }
-	 function arrayUpt(es){
+	 function arrayUpt(es){ /// es must to be $scope
+		 /// update items array and store it 
         "use strict";
-        namesJs=toUppSort(namesJs);
-        es.names=namesJs;
-        if(store){
-            store.set("data",namesJs);
+        itemsJs=toUppSort(itemsJs); /// make first letter for each element of array capital and sort 
+        es.items=itemsJs; /// update items 
+        if(store){ 
+            store.set("data",itemsJs); /// store items
         }
        
     }
-    /* hide loading */
+    ///hide loading 
     var loadDiv = document.getElementById("loadDiv");
     setTimeout(function(){
 	     $("#loadDiv").fadeOut(200);
     },500);
+
+    /// nice scroll 
     $("#mainDiv").niceScroll({
 	       cursorcolor:"#DD0031",
           cursorwidth:"5px"
     });
+
     var myApp = angular.module("app",[]);
     myApp.controller("con",function($scope){
         "use strict";
-        $scope.names = toUppSort(namesJs);
-        $scope.edit = function(id){
-            var obj = searchInItems(id),
-                arrayInd= namesJs.indexOf(id),
+        $scope.items = toUppSort(itemsJs); 
+        $scope.edit = function(itemTxt){ /// Edit function
+            var obj = searchInItems(itemTxt), /// found item user need to edit by item text (come from index.html )
+                arrayInd= itemsJs.indexOf(itemTxt), /// found itemsJs array index 
                 userEnter = prompt("Edit Value",id);
-            if(userEnter == "" || userEnter== null){}
-            else{
-                namesJs[arrayInd] = userEnter;  
-                arrayUpt($scope);
+            if(userEnter == "" || userEnter== null){} /// if user left prompt empty or click cancel
+            else{ 
+                itemsJs[arrayInd] = userEnter;  /// replace old value to new value
+                arrayUpt($scope); 
                 setTimeout(function(){
                      var newObj = searchInItems(userEnter);
                     light(newObj);
                 },100);
             }
         };
-        $scope.del = function(id){
+        $scope.del = function(txt){
             "use strict";
-            if(confirm(" Delete : (" + id + ") ?")){
-                var arrayIndDel= namesJs.indexOf(id);
-                namesJs.splice(arrayIndDel,1);
+            if(confirm(" Delete : (" + txt+ ") ?")){ /// get confirm from user , txt come from index.html 
+                var arrayIndexDel= itemsJs.indexOf(txt); /// found index of item in itemsJs array
+                itemsJs.splice(arrayIndexDel,1); /// delete the item from array
                 arrayUpt($scope);
                 
             }
@@ -116,9 +128,9 @@ window.onload=function(){
         $scope.add = function(){
           "use strict";
           var userAdd = prompt("Enter value :");
-          if(userAdd=="" || userAdd == null){}
+          if(userAdd=="" || userAdd == null){} /// if user left the prompt empty or click cancel
           else{
-              namesJs.push(userAdd);             
+              itemsJs.push(userAdd);   /// push user text need to add to itemsJs Array
               arrayUpt($scope);
               setTimeout(function(){
 	               var newObj = searchInItems(userAdd);
@@ -127,12 +139,13 @@ window.onload=function(){
               
           }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         };
-        $scope.export = function(){
+        $scope.export = function(){  
+         /// make a txt has items Each item in a line and download it 
             var txt = "";
-            for(var i= 0;i<namesJs.length;i++){
-                txt +=namesJs[i] + "\n";
+            for(var i= 0;i<itemsJs.length;i++){
+                txt +=itemsJs[i] + "\n";
     	      }
-	        download("list.txt",txt);
+	        download("list.txt",txt); 
 	     };
     });
     

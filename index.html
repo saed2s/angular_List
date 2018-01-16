@@ -18,7 +18,8 @@
       
           <script defer src="libs/fontawesome-all.min.js"></script>
           
-	    	 <!-- ****** faviconit.com favicons ****** -->
+	    	 <!-- ****** favicon ****** -->
+		 
 			 <link rel="shortcut icon" href="src/img/favicon.ico">
 		 	 <link rel="icon" sizes="16x16 32x32 64x64" href="img/favicon.ico">
 			 <link rel="icon" type="image/png" sizes="196x196" href="src/img/favicon-192.png">
@@ -39,12 +40,11 @@
 			 <meta name="msapplication-TileColor" content="#FFFFFF">
 			 <meta name="msapplication-TileImage" content="src/img/favicon-144.png">
 	  	  	 <meta name="msapplication-config" content="src/img/browserconfig.xml">
-			 <!-- ****** faviconit.com favicons ****** -->
-			
+			 <!-- ****** favicons ****** -->			
           <link rel="stylesheet" href="src/css/style.css" /> 
           <!-- Address bar color -->
           <!-- Chrome, Firefox OS and Opera -->
-          <meta name="theme-color" content="#DD0031" />
+          <meta name="theme-color" content="#DD0031" /> 
           <!-- Windows Phone -->
           <meta name="msapplication-navbutton-color" content="#DD0031" />
           <!-- iOS Safari -->
@@ -52,29 +52,37 @@
 
     </head>
     <body ng-controller="con">       
-     <div id="loadDiv" align="center">Loading ...</div>     
-     <div id="expDiv" ng-click="export()" align="center">
+     <div id="loadDiv" align="center">Loading ...</div>   <!-- Loading screen -->
+      <!-- btns -->
+      <!-- export div -->
+     <div id="expDiv" ng-click="export()" align="center">  
          <label for="exS" id="expL"> <img id="expImg" src="src/img/export.svg" alt="export"  /></label>
          <span id="exS">Export List</span>
      </div>      
+
      <hr color="#ff6161"/>      
      <center>  
-     		<label for="searchInp" >Search :</label>
+
+     		<label for="searchInp" >Search : </label>
          <input id="searchInp" ng-model="inps" />
+
          <div id="mainDiv">
-             <div  id="itemsDiv" ng-repeat="name in names| filter: inps track by $index">
-                 <p class="itemsP" n-id="name" ng-bind="name"></p> 
-                 <button class="eB" ng-click="edit(name)" >
+             <div  id="itemsDiv" ng-repeat="item in items| filter: inps track by $index">
+                 <p class="itemsP" ng-bind="item"></p> 
+ 
+						<!-- Edit button -->
+                 <button class="eB" ng-click="edit(item)" >
                      <i style="color: #979800;" class="far fa-edit" aria-hidden="true"></i>
                  </button>
-                 <button class="dB" ng-click="del(name)">
+                  <!-- Delete button -->
+                 <button class="dB" ng-click="del(item)">
                      <i style="color : #ff6161;" class="far fa-minus-square" aria-hidden="true"></i>
                  </button>
               </div>
           </div>
-          <br />
+          <!-- Add Button -->        
           <button id="addItem" ng-click="add()">
-            Add   <i class="far fa-plus-square" aria-hidden="true"></i>
+            Add <i class="far fa-plus-square" aria-hidden="true"></i>
           </button>
            
       </center>
