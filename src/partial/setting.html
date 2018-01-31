@@ -1,0 +1,20 @@
+<a href="#!/" id="settingBack">
+	<i class="fas fa-chevron-circle-left" aria-hidden="true"></i>
+</a>
+ <center>
+        <div id="chFiNa">         
+          <span>Export File Name :</span>  
+          <br />
+               
+          <input id="defaultRadio" type="radio" name="efnMethod" value="0" ng-model="efn" ng-change="efnChange()" ng-checked="check0"></input>
+          <label id="defLeb">Default Name : </label>     
+          <input type="text" id="dfnInp" ng-model="dfn"></input>     
+          <span id="txt">.txt</span>
+          
+          <br />
+          
+          <input id="askMe" type="radio" name="efnMethod" value="1" ng-model="efn" ng-change=" efnChange()" ng-checked="check1"></input>
+          <label for="askMe">Ask me every time</label>
+         
+        </div>
+ </center>

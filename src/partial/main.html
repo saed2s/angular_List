@@ -1,0 +1,35 @@
+<a style="color:black; text-decoration:none;" href="#!/setting">
+    <div class="mainBtns" id="settingDiv">
+        <i class="fas fa-cog" aria-hidden="true" style="font-size:25px;"></i> 
+    </div>
+<a>
+<div id="expDiv" class="mainBtns" ng-click="export()" align="center">  
+    <label for="exS" id="expL"> <img id="expImg" src="src/img/export.svg" alt="export"  /></label>
+    <span id="exS">Export List</span>
+</div>      
+
+<hr color="#ff6161"/>      
+<center>
+  <label for="searchInp" >Search : </label>
+    <input id="searchInp" ng-model="inps" />
+<div id="mainDiv">
+  
+    <div  id="itemsDiv" ng-repeat="item in items| filter: inps track by $index">
+        <p class="itemsP" ng-bind="item"></p> 
+		   <!-- Edit button -->
+         <button class="eB" ng-click="edit(item)" >
+             <i style="color: #979800;" class="far fa-edit" aria-hidden="true"></i>
+         </button>
+         <!-- Delete button -->
+         <button class="dB" ng-click="del(item)">
+             <i style="color : #ff6161;" class="far fa-minus-square" aria-hidden="true"></i>
+         </button>
+     </div> 
+   
+</div>
+ <button id="addItem" ng-click="add()">
+         Add <i class="far fa-plus-square" aria-hidden="true"></i>
+ </button>          
+     
+</center>
+</div>
