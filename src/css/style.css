@@ -100,12 +100,11 @@ body {
     margin-left:46px;
     margin-top:10px;
 }
+
 #defLeb{
     margin-right:1px;
 }
-#dfnInp{
-   width:60px;
-}
+
 #dfnInp , #txt {
     border:none;
     border-bottom:1px solid #c1c1c1;
@@ -113,17 +112,18 @@ body {
     outline:none;
     background-color:white;
 }
+
+#dfnInp{
+   width:60px;
+}
 #txt{
     margin-left:-4px;
     font-size:50px;
-    margin-top:3px;
+    margin-top:4px;
     position: absolute;
     
 }
-#defaultRadio:checked ~ #dfnInp{
-    border-color:black;
+#defaultRadio:checked ~ #dfnInp, #defaultRadio:checked ~ #txt {
     color:black;
+    border-color:black !important;
 }
-
-
-

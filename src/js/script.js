@@ -155,53 +155,45 @@ myApp.controller("mainController",function($scope){
 myApp.controller("settingController",function($scope){
 	 "use strict";
 	  var dfn = document.getElementById("dfnInp"),
-            txt =document.getElementById("txt");
+          txtSpan =document.getElementById("txt");
      if(store.get("efn")==0){
-        $scope.check0=true;
-        $scope.dfn=store.get("dfn");
+         $scope.check0=true;       
      }                 
      else{
          $scope.check1=true;        
          dfn.disabled=true;
-      }        
+      }      
+      if(store.get("dfn")){
+	       $scope.dfn=store.get("dfn");
+	   }      
       $scope.efnChange=function(){        
           if($scope.efn ==0){
-              dfn.disabled=false;
-              if($scope.dfn== undefined || $scope.dfn.length==0){
-                  dfn.style.borderColor="red";
-                  txt.style.borderColor="red";
-              }
-              store.set("efn",0);
+              dfn.disabled=false; 
+              
            }
            else{
-                dfn.disabled=true;
-                dfn.style.borderColor="#c1c1c1";
-                txt.style.borderColor="#c1c1c1";
+                dfn.disabled=true;         
                 store.set("efn",1);
-            }
-            
-        
-    };  
-    (function eventLis(){
-        dfn.addEventListener("keyup",function(){
-            if($scope.dfn.length==0){
-                dfn.style.borderColor="red";
-                txt.style.borderColor="red";
-             }
-             else{
-                 dfn.style.borderColor="black";
-                 txt.style.borderColor="black";
-                 store.set("efn",0);
-                 store.set("dfn",$scope.dfn);
-            }              
-        });  
-      })();
+            }       
+    };    
+    dfn.addEventListener("keyup",function(){
+        if($scope.dfn != undefined && $scope.dfn.length != 0 ){            
+            store.set("efn",0);
+            store.set("dfn",$scope.dfn);
+           
+        }    
+        else{
+           
+       
+	     }
+     });
+     
  });   
 
 window.onload=function(){
     ///hide loading 
-    var loadDiv = document.getElementById("loadDiv"),
-          txt= document.getElementById("txt");
+    var loadDiv = document.getElementById("loadDiv");
+          
     setTimeout(function(){
         $("#loadDiv").fadeOut(200);
     },500);
