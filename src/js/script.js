@@ -139,17 +139,20 @@ myApp.controller("mainController",function($scope){
           for(var i= 0;i<itemsJs.length;i++){
               txt +=itemsJs[i] + "\n";
     	    }
+	
 	      if(store.get("efn") == 0){
 	            var name = store.get("dfn");
-	      }
-	      else if(store.get("efn") ==1){
-		         var name = prompt("Enter download file name ");
-		    }
+	      }    
 		    else{
 			      store.set("efn",1);
 		         var name = prompt("Enter download file name ");
+		         
 			  }
-	       download(name,txt);
+			 if(name!= null && name.length !=0){
+			     download(name,txt);
+			 }
+			 
+	       
 	   };
 }); /// main controll close
 myApp.controller("settingController",function($scope){
