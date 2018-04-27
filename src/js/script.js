@@ -61,20 +61,20 @@ if(store){ ///  if storeJs loaded
 else{
     alert("Proplem when load store.js library please try reload the page or another browser ");
 } 
-function searchInItems(txt){  /// search in objects has class (temsP)
-    "use strict";
-     var obj = document.getElementsByClassName("itemsP"),
-          value=value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-          value = new RegExp(txt.trim(),"i");
-     for (var i = 0; i<obj.length; i++){
-         var ma =obj[i].innerText.trim().match(value);
-         if (ma != null){
-             if(ma == obj[i].innerText.trim()){
-                 return obj[i];
-              }
-         }
-      }
-}
+function searchInItems(txt){
+        "use strict";
+        var obj = document.getElementsByClassName("itemsP"),
+            value=txt.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+            value = new RegExp(value.trim(),"i");
+        for (var i = 0; i<obj.length; i++){
+            var ma =obj[i].innerText.trim().match(value);
+            if (ma != null){
+                if(ma == obj[i].innerText.trim()){
+                    return obj[i];   
+                }
+            }
+        }
+ }
  function light(obj){  
 	  /// scroll to the element and make background green for 1.1 sec
     "use strict";
@@ -124,12 +124,12 @@ myApp.controller("mainController",function($scope){
           var userAdd = prompt("Enter value :");
           if(userAdd=="" || userAdd == null){} /// if user left the prompt empty or click cancel
           else{
-              itemsJs.push(userAdd);   /// push user text need to add to itemsJs Array
+	           itemsJs.push(userAdd);   /// push user text need to add to itemsJs Array
               arrayUpt($scope);
               setTimeout(function(){
 	               var newObj = searchInItems(userAdd);
                   light(newObj);
-              },100);
+              },150);
               
           }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
       };
