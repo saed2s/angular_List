@@ -1,6 +1,6 @@
 # AngularJs list project. 
 Single page web application example. <br>
-**[Preview page (demo)](https://github.com/baselakasha/angular_List)**
+**[Preview page (demo)](https://baselakasha.github.io/angular_List/)**
 <hr>
 
 ###  frameworks and Libraries used: 
