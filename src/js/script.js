@@ -64,6 +64,7 @@ else{
 function searchInItems(txt){  /// search in objects has class (temsP)
     "use strict";
      var obj = document.getElementsByClassName("itemsP"),
+          value=value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
           value = new RegExp(txt.trim(),"i");
      for (var i = 0; i<obj.length; i++){
          var ma =obj[i].innerText.trim().match(value);
