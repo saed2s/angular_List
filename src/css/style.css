@@ -127,3 +127,13 @@ body {
     color:black;
     border-color:black !important;
 }
+hr{
+   display: block;
+   height: 1px;
+   border: 0;
+   border-top: 1px solid #ff6161; 
+   margin:10px; 
+   padding: 0; 
+
+}
+
