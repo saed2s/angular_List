@@ -1,8 +1,8 @@
 # AngularJs list project. 
 Single page web application example. 
-<br />
 **[Preview page (demo)](https://github.com/baselakasha/angular_List)**
-<br />
+<hr>
+
 ###  frameworks and Libraries used: 
 * AngularJs
 * Jquery
@@ -14,7 +14,7 @@ Single page web application example.
 
 **You dont need Internet to run this app**
 
-<hr >
-BaselAkasha <br />
+<hr>
+BaselAkasha <br>
 BaselAkasha@gmail.com
 
