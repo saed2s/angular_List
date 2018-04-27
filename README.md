@@ -1,5 +1,5 @@
 # AngularJs list project. 
-Single page web application example. 
+Single page web application example. <br>
 **[Preview page (demo)](https://github.com/baselakasha/angular_List)**
 <hr>
 
