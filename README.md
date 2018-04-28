@@ -21,6 +21,8 @@ Single page web application example. <br>
 ### Terms of service : ###
 * We are not responsible for any loss or theft of your data.
 * Your data will save in your browser. 
+### Donate : ###
+### Be of first my patreon : [Patreon Profile](https://www.patreon.com/Baselakasha) ###
 
 <hr>
 BaselAkasha <br>
